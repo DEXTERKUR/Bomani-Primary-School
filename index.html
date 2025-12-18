@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!DOCTYPE html> 
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -8,20 +8,16 @@
     <!-- Google Font -->
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
 
-<link rel="stylesheet" href="style.css">
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
-
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
     <!-- ===== HEADER / NAVBAR ===== -->
     <header>
-        <!-- Replace School Name -->
         <div class="logo">BOMANI JUNIOR SCHOOL</div>
 
         <nav>
             <ul>
-                <!-- Replace page names and links -->
                 <li><a href="index.html">Home</a></li>
                 <li><a href="about.html">About Us</a></li>
                 <li><a href="academics.html">Academics</a></li>
@@ -33,14 +29,27 @@
         </nav>
     </header>
 
-    <!-- ===== HERO ===== -->
+    <!-- ===== HERO WITH BACKGROUND SLIDER ===== -->
     <section class="hero">
-        <h1>Welcome to BOMANI JUNIOR SCHOOL</h1>
-        <p>
-            Inspiring excellence, nurturing minds, and shaping the leaders of tomorrow.
-            A place where education meets innovation.
-        </p>
-        <button>Explore Our School</button>
+
+        <!-- Background Slider -->
+        <div class="hero-slider">
+            <div class="slide active" style="background-image: url('images/slide1.jpg');"></div>
+            <div class="slide" style="background-image: url('images/slide2.jpg');"></div>
+            <div class="slide" style="background-image: url('images/slide3.jpg');"></div>
+            <div class="slide" style="background-image: url('images/slide4.jpg');"></div>
+        </div>
+
+        <!-- Hero Content -->
+        <div class="hero-content">
+            <h1>Welcome to BOMANI JUNIOR SCHOOL</h1>
+            <p>
+                Inspiring excellence, nurturing minds, and shaping the leaders of tomorrow.
+                A place where education meets innovation.
+            </p>
+            <button>Explore Our School</button>
+        </div>
+
     </section>
 
     <!-- ===== FEATURES ===== -->
@@ -69,8 +78,22 @@
 
     <!-- ===== FOOTER ===== -->
     <footer>
-        <p>© 2025 Bomani Juinior School. All Rights Reserved.</p>
+        <p>© 2025 Bomani Junior School. All Rights Reserved.</p>
     </footer>
+
+    <!-- ===== SLIDER SCRIPT ===== -->
+    <script>
+        const slides = document.querySelectorAll('.slide');
+        let currentSlide = 0;
+
+        function showNextSlide() {
+            slides[currentSlide].classList.remove('active');
+            currentSlide = (currentSlide + 1) % slides.length;
+            slides[currentSlide].classList.add('active');
+        }
+
+        setInterval(showNextSlide, 5000); // 5 seconds
+    </script>
 
 </body>
 </html>
